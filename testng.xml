@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Create Drivers">
+    <test name="Create drivers in chrome browser">
+        <parameter name="browser" value="chrome"/>
+        <packages>
+            <package name="org.estafeta.tests.*"/>
+        </packages>
+    </test>
+    <!--<test name="Create drivers in firefox browser">
+        <parameter name="browser" value="firefox"/>
+        <packages>
+            <package name="org.estafeta.tests.*"/>
+        </packages>
+    </test>-->
+</suite>
