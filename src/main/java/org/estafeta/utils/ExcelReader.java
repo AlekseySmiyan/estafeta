@@ -14,8 +14,7 @@ import java.io.IOException;
  * Created by Aleksey Smiyan on 02.05.18.
  */
 public class ExcelReader {
-
-    private static File file = new File(PropertiesReader.getProperties("drivers.excel"));
+    
     private XSSFWorkbook workbook;
 
     public void openWorkBook(File nameFile) {
