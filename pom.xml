@@ -13,6 +13,8 @@
         <selenium.version>3.4.0</selenium.version>
         <testng.version>6.11</testng.version>
         <java.version>1.8</java.version>
+        <poi.version>3.17</poi.version>
+        <poi-ooxml.version>3.17</poi-ooxml.version>
         <maven.compiler.plugin.version>3.6.1</maven.compiler.plugin.version>
         <maven.surefire.plugin.version>2.20</maven.surefire.plugin.version>
     </properties>
@@ -28,6 +30,16 @@
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi-ooxml.version}</version>
         </dependency>
     </dependencies>
 
