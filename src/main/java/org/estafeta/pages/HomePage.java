@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 /**
- * Created by user on 22.04.18.
+ * Created by driver on 22.04.18.
  */
 public class HomePage extends BasePage {
 

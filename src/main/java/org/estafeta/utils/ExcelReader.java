@@ -1,9 +1,6 @@
 package org.estafeta.utils;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
@@ -14,16 +11,24 @@ import java.io.IOException;
  * Created by Aleksey Smiyan on 02.05.18.
  */
 public class ExcelReader {
-    
-    private XSSFWorkbook workbook;
 
-    public void openWorkBook(File nameFile) {
+    private File file;
+    private XSSFWorkbook workbook;
+    private String sheetName;
+
+    public ExcelReader(File file, String sheetName) {
+        this.file = file;
+        this.sheetName = sheetName;
+    }
+
+    public Workbook openWorkBook() {
         workbook = null;
         try {
-            workbook = new XSSFWorkbook(new FileInputStream(nameFile));
+            workbook = new XSSFWorkbook(new FileInputStream(file));
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return workbook;
     }
 
     public void closeWorkBook() {
@@ -34,8 +39,8 @@ public class ExcelReader {
         }
     }
 
-    public String readCellValue(String sheetName, String rowName, String colName) {
-        Sheet sheet = workbook.getSheet(sheetName);
+    public String readCellValue(String rowName, String colName) {
+        Sheet sheet = openWorkBook().getSheet(sheetName);
         int rowStart = 0;
         int rowNum = 1;
         int rowEnd = sheet.getLastRowNum();
@@ -62,6 +67,7 @@ public class ExcelReader {
         } else if(cell.getCellTypeEnum() == CellType.BLANK) {
             value = "";
         }
+        closeWorkBook();
         return value;
     }
 }

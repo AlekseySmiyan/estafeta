@@ -14,7 +14,7 @@ import org.testng.annotations.*;
 /**
  * Created by Aleksey Smiyan on 21.04.18.
  */
-public class LoginTest extends BaseTest {
+public class CreateDriverTest extends BaseTest {
 
     private LoginPage loginPage;
     private HomePage homePage;
