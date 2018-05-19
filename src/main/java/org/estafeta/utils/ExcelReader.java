@@ -42,19 +42,21 @@ public class ExcelReader {
     public String readCellValue(String rowName, String colName) {
         Sheet sheet = openWorkBook().getSheet(sheetName);
         int rowStart = 0;
+        int colStart = 0;
         int rowNum = 1;
         int rowEnd = sheet.getLastRowNum();
-        for (int r=rowStart + 1; r<rowEnd; r++) {
-            if(sheet.getRow(r).getCell(r).getStringCellValue().trim().equals(rowName.trim())) {
+        for (int r=rowStart + 1; r<rowEnd + 1; r++) {
+            if(sheet.getRow(r).getCell(colStart).getStringCellValue().trim().equals(rowName.trim())) {
                 rowNum = r;
+                break;
             }
         }
-        int colStart = 0;
         int colNum = 1;
         int colEnd = sheet.getRow(rowNum).getLastCellNum();
         for(int c=colStart + 1; c<colEnd; c++) {
             if(sheet.getRow(rowStart).getCell(c).getStringCellValue().trim().equals(colName.trim())) {
                 colNum = c;
+                break;
             }
         }
         Row row = sheet.getRow(rowNum);
