@@ -4,7 +4,7 @@ import org.estafeta.builders.driver.UserDriverBuilder;
 import org.estafeta.directors.user.DirectorDriver;
 
 /**
- * Created by driver on 12.05.18.
+ * Created by Aleksey Smiyan on 12.05.18.
  */
 public class TestUtils {
     public static void main(String[] args) {
