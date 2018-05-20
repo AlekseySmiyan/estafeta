@@ -9,8 +9,8 @@ import org.estafeta.components.user.FullNameEng;
  */
 public class DirectorDriver {
 
-    public void createDriver(Builder builder) {
-        builder.setFullName("user1", new FullName());
-        builder.setFullNameEng("user1", new FullNameEng());
+    public void createDriver(Builder builder, String user) {
+        builder.setFullName(user, new FullName());
+        builder.setFullNameEng(user, new FullNameEng());
     }
 }

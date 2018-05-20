@@ -10,7 +10,7 @@ public class TestUtils {
     public static void main(String[] args) {
         DirectorDriver directorDriver = new DirectorDriver();
         UserDriverBuilder userDriverBuilder = new UserDriverBuilder();
-        directorDriver.createDriver(userDriverBuilder);
+        directorDriver.createDriver(userDriverBuilder, "user1");
         System.out.println(userDriverBuilder.getUserDriver());
     }
 }
